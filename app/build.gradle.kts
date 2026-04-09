@@ -56,7 +56,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    
+
     // Явно указываем версию activity, совместимую с compileSdk 33
     implementation("androidx.activity:activity-ktx:1.6.1")
 
@@ -64,17 +64,25 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.3.2")
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("com.google.android.material:material:1.8.0")
-    
+
     // Gson для работы с JSON в SharedPreferences
     implementation("com.google.code.gson:gson:2.10.1")
-    
+
     // GreenDAO для работы с SQLite
     implementation("org.greenrobot:greendao:3.3.0")
-    
+
     // Coroutines для асинхронных операций
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
+
+    // OkHttp — HTTP-клиент с поддержкой HTTP/2, кэширования, таймаутов
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
+
+    // Retrofit — типобезопасный HTTP-клиент поверх OkHttp
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

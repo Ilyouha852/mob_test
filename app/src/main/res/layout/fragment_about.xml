@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="vertical" android:background="?attr/colorPrimary"
+            android:padding="24dp" android:layout_marginBottom="16dp">
+
+            <TextView android:id="@+id/textViewAppName" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Файловый менеджер"
+                android:textSize="22sp" android:textStyle="bold" android:gravity="center"
+                android:textColor="@android:color/white" android:layout_marginBottom="8dp"/>
+
+            <TextView android:id="@+id/textViewDeveloper" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:text="Разработчик"
+                android:textSize="16sp" android:gravity="center"
+                android:textColor="@android:color/white"/>
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Описание:" android:textSize="18sp" android:textStyle="bold"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView android:id="@+id/textViewDescription" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="Загрузка..."
+            android:textSize="14sp" android:lineSpacingExtra="4dp"
+            android:background="@color/lightgray" android:padding="16dp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>

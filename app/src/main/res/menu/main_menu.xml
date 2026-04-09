@@ -39,6 +39,12 @@
         app:showAsAction="never" />
 
     <item
+        android:id="@+id/menu_network_lab"
+        android:title="Сетевые запросы"
+        android:icon="@android:drawable/ic_menu_share"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/menu_settings"
         android:title="Настройки"
         android:icon="@android:drawable/ic_menu_preferences"

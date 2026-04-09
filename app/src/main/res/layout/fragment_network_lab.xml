@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Конфигурация клиента"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#1565C0"
+            android:padding="8dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvProtocol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:background="#E3F2FD"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Запрос 1 — Получение пользователя"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#2E7D32"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/etUserId"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="ID пользователя (1–10)"
+                android:inputType="number"
+                android:text="1"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnFetchUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GET /users/{id}"
+                android:backgroundTint="#2E7D32"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvUserResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:background="#F1F8E9"
+            android:minHeight="80dp"
+            android:layout_marginBottom="12dp"
+            android:hint="Результат первого запроса появится здесь..."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Запрос 2 — Посты пользователя (userId из запроса 1)"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#E65100"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/btnFetchPosts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="GET /posts?userId={id из запроса 1}"
+            android:backgroundTint="#E65100"
+            android:enabled="false"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvPostsResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:background="#FFF3E0"
+            android:minHeight="100dp"
+            android:layout_marginBottom="12dp"
+            android:hint="Результат второго запроса появится здесь..."/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Управление и статус"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#6A1B9A"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="13sp"
+            android:background="#EDE7F6"
+            android:text="Готов к выполнению запросов."
+            android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Отменить запрос"
+                android:backgroundTint="#B71C1C"
+                android:enabled="false"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnClearCache"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Очистить кэш"
+                android:backgroundTint="#37474F"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Информация о кэше"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="#37474F"
+            android:padding="8dp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/tvCacheInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:background="#ECEFF1"
+            android:layout_marginBottom="8dp"/>
+
+    </LinearLayout>
+</ScrollView>

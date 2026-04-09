@@ -19,6 +19,10 @@
     <string name="bookmark_updated">Закладка обновлена</string>
     <string name="bookmark_deleted">Закладка удалена</string>
 
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Открыть меню навигации</string>
+    <string name="navigation_drawer_close">Закрыть меню навигации</string>
+
     <!-- Concurrency Lab -->
     <string name="progress_0">Прогресс: 0%%</string>
     <string name="progress_percent">Прогресс: %d%%</string>
