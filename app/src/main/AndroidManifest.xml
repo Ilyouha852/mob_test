@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Разрешение на чтение внешнего хранилища -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="MOBDEV_LAB4"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MOBDEV_LAB3">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="MOBDEV_LAB4"
+            android:theme="@style/Theme.MOBDEV_LAB3">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".FileDetailActivity"
+            android:exported="false"
+            android:label="Подробности файла"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".FileManagementActivity"
+            android:exported="false"
+            android:label="Управление файлами"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".BookmarksActivity"
+            android:exported="false"
+            android:label="Закладки"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="Настройки"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".AboutActivity"
+            android:exported="false"
+            android:label="О приложении"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".StorageLabActivity"
+            android:exported="false"
+            android:label="Работа с хранилищами"
+            android:theme="@style/Theme.StorageLab" />
+
+        <activity
+            android:name=".ConcurrencyLabActivity"
+            android:exported="false"
+            android:label="Потоки и корутины"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+
+        <activity
+            android:name=".FileMetadataActivity"
+            android:exported="false"
+            android:label="File Metadata &amp; Tags"
+            android:theme="@style/Theme.MOBDEV_LAB3" />
+    </application>
+
+</manifest>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Главная"
+        android:icon="@drawable/ic_home"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_bookmarks"
+        android:title="Закладки"
+        android:icon="@android:drawable/btn_star_big_on"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_file_management"
+        android:title="Управление файлами"
+        android:icon="@android:drawable/ic_menu_manage"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_storage_lab"
+        android:title="Работа с хранилищами"
+        android:icon="@android:drawable/ic_menu_save"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_concurrency_lab"
+        android:title="Потоки и корутины"
+        android:icon="@android:drawable/ic_menu_recent_history"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_file_metadata"
+        android:title="Метаданные файлов"
+        android:icon="@android:drawable/ic_menu_agenda"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_settings"
+        android:title="Настройки"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/menu_about"
+        android:title="О приложении"
+        android:icon="@android:drawable/ic_menu_info_details"
+        app:showAsAction="never" />
+
+</menu>

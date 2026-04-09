@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">MOBDEV_LAB3</string>
+    
+    <!-- Bookmarks -->
+    <string name="bookmarks_title">Закладки</string>
+    <string name="add_bookmark">Добавить закладку</string>
+    <string name="edit_bookmark">Редактировать закладку</string>
+    <string name="delete_bookmark">Удалить закладку</string>
+    <string name="bookmark_name">Название закладки</string>
+    <string name="bookmark_description">Описание</string>
+    <string name="bookmark_path">Путь</string>
+    <string name="bookmark_category">Категория</string>
+    <string name="select_path">Выбрать путь</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete_confirmation_title">Удалить закладку?</string>
+    <string name="delete_confirmation_message">Вы уверены, что хотите удалить эту закладку?</string>
+    <string name="bookmark_added">Закладка добавлена</string>
+    <string name="bookmark_updated">Закладка обновлена</string>
+    <string name="bookmark_deleted">Закладка удалена</string>
+
+    <!-- Concurrency Lab -->
+    <string name="progress_0">Прогресс: 0%%</string>
+    <string name="progress_percent">Прогресс: %d%%</string>
+    <string name="result_executing">Результат: выполнение...</string>
+    <string name="result_sum_1_100">Результат: сумма 1-100 = %d</string>
+    <string name="result_cancelled">Результат: отменено</string>
+    <string name="result_cancelling">Результат: отмена...</string>
+    <string name="result_thread1_sum">Результат: Поток 1: сумма 1-50 = %d\nПередача в поток 2...</string>
+    <string name="result_thread1_value">Результат: Поток 1: %d\nПоток 2: %d² = %d</string>
+    <string name="cancelled_thread1">Результат: отменено в потоке 1</string>
+    <string name="cancelled_thread2">Результат: отменено в потоке 2</string>
+    <string name="result_coroutine1_sum">Результат: Корутина 1: сумма 1-50 = %d\nПередача в корутину 2...</string>
+    <string name="result_coroutine1_value">Результат: Корутина 1: %d\nКорутина 2: %d² = %d</string>
+</resources>
