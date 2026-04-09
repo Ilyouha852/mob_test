@@ -35,7 +35,7 @@ app/src/main/java/com/example/mobdev_lab3/
 
 ## Replit Environment Setup
 - **Java:** OpenJDK 17.0.15+6 (set via `org.gradle.java.home` in gradle.properties)
-  - Path: `/nix/store/bk2hgshkd3a9v4hrs9gjmxfkzvflgydx-openjdk-17.0.15+6`
+  - Path: `your-openjdk-path`
   - Note: GraalVM JDK 19 (default) is incompatible with Android build tools (missing jlink support)
 - **Android SDK:** Downloaded and installed at `/home/runner/android-sdk`
   - Platform: android-33
