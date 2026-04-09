@@ -16,6 +16,7 @@ This is an Android mobile application (Lab 3 / Lab 4) for mobile development cou
 - Data Storage Lab: SharedPreferences (JSON/Gson), TXT files, CSV files (MediaStore API)
 - Concurrency Lab: Java Threads, GlobalScope coroutines, lifecycleScope coroutines
 - SQLite database management via greenDAO
+- Network Lab: Retrofit + OkHttp HTTP/2 client fetching user data from JSONPlaceholder API
 
 ## Project Structure
 ```
@@ -25,6 +26,8 @@ app/src/main/java/com/example/mobdev_lab3/
 ├── helper/        - UI and logic helpers
 ├── manager/       - Business logic (BookmarksManager)
 ├── model/         - Data models (Note, FileItem, FileBookmark)
+├── network/       - Retrofit/OkHttp networking (ApiService, NetworkClient, NetworkRepository)
+├── presentation/  - Fragments and ViewModels organized by feature
 ├── repository/    - Data access layer (CSV, TXT, SharedPreferences)
 ├── ui/storage/    - Storage lab fragments
 └── viewmodel/     - FileManagerViewModel
@@ -32,7 +35,7 @@ app/src/main/java/com/example/mobdev_lab3/
 
 ## Replit Environment Setup
 - **Java:** OpenJDK 17.0.15+6 (set via `org.gradle.java.home` in gradle.properties)
-  - Path: `/nix/store/xad649j61kwkh0id5wvyiab5rliprp4d-openjdk-17.0.15+6`
+  - Path: `/nix/store/bk2hgshkd3a9v4hrs9gjmxfkzvflgydx-openjdk-17.0.15+6`
   - Note: GraalVM JDK 19 (default) is incompatible with Android build tools (missing jlink support)
 - **Android SDK:** Downloaded and installed at `/home/runner/android-sdk`
   - Platform: android-33
@@ -40,6 +43,7 @@ app/src/main/java/com/example/mobdev_lab3/
   - Platform Tools included
   - Command line tools: cmdline-tools/latest
 - **Workflow:** "Build Android App" - runs `./gradlew assembleDebug`
+- **local.properties:** Points to `sdk.dir=/home/runner/android-sdk`
 
 ## Building
 The workflow runs `./gradlew assembleDebug` which compiles the app.
@@ -47,6 +51,11 @@ The APK output will be at: `app/build/outputs/apk/debug/app-debug.apk`
 
 **Note:** This is an Android mobile app — it cannot be previewed in a web browser. 
 It must be installed on an Android device or emulator to run.
+
+## Bug Fixes Applied
+- **StorageFragment.kt**: Fixed wrong import — `FragmentStateAdapter` was imported from
+  `androidx.fragment.app` (wrong) instead of `androidx.viewpager2.adapter` (correct).
+- **app/build.gradle.kts**: Added missing `androidx.viewpager2:viewpager2:1.1.0-beta02` dependency.
 
 ## Network Module (Лаб. работа — Сетевые запросы)
 
@@ -81,4 +90,5 @@ NetworkLabActivity.kt — UI лабораторной работы
 - `org.greenrobot:greendao:3.3.0` - SQLite ORM
 - `org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3` - Coroutines
 - `androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2` - ViewModel
+- `androidx.viewpager2:viewpager2:1.1.0-beta02` - ViewPager2 for StorageFragment
 - `com.google.android.material:material:1.8.0` - Material Design UI

@@ -76,6 +76,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
 
+    // ViewPager2 для StorageFragment
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+
     // OkHttp — HTTP-клиент с поддержкой HTTP/2, кэширования, таймаутов
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
