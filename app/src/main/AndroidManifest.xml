@@ -31,18 +31,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".FileDetailActivity"
-            android:exported="false"
-            android:label="Подробности файла"
-            android:theme="@style/Theme.MOBDEV_LAB3" />
-
-        <activity
-            android:name=".FileManagementActivity"
-            android:exported="false"
-            android:label="Управление файлами"
-            android:theme="@style/Theme.MOBDEV_LAB3" />
-
     </application>
 
 </manifest>

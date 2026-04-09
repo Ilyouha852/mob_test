@@ -61,21 +61,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        supportFragmentManager.popBackStack(null, androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE)
         when (item.itemId) {
-            R.id.nav_file_manager  -> navigateTo(FileManagerFragment(),     "Файловый менеджер")
-            R.id.nav_bookmarks     -> navigateTo(BookmarksFragment(),        "Закладки")
-            R.id.nav_storage_lab   -> navigateTo(StorageFragment(),          "Хранилища данных")
+            R.id.nav_file_manager    -> navigateTo(FileManagerFragment(),   "Файловый менеджер")
+            R.id.nav_bookmarks       -> navigateTo(BookmarksFragment(),     "Закладки")
+            R.id.nav_storage_lab     -> navigateTo(StorageFragment(),       "Хранилища данных")
             R.id.nav_concurrency_lab -> navigateTo(ConcurrencyFragment(),   "Потоки и корутины")
-            R.id.nav_network_lab   -> navigateTo(NetworkFragment(),          "Сетевые запросы")
-            R.id.nav_file_metadata -> navigateTo(FileMetadataFragment(),     "Метаданные файлов")
-            R.id.nav_settings      -> navigateTo(SettingsFragment(),         "Настройки")
-            R.id.nav_about         -> navigateTo(AboutFragment(),            "О приложении")
+            R.id.nav_network_lab     -> navigateTo(NetworkFragment(),       "Сетевые запросы")
+            R.id.nav_file_metadata   -> navigateTo(FileMetadataFragment(),  "Метаданные файлов")
+            R.id.nav_settings        -> navigateTo(SettingsFragment(),      "Настройки")
+            R.id.nav_about           -> navigateTo(AboutFragment(),         "О приложении")
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    private fun navigateTo(fragment: Fragment, title: String) {
+    fun navigateTo(fragment: Fragment, title: String) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragmentContainer, fragment)
             .commit()
@@ -83,10 +84,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
+        when {
+            drawerLayout.isDrawerOpen(GravityCompat.START) ->
+                drawerLayout.closeDrawer(GravityCompat.START)
+            supportFragmentManager.backStackEntryCount > 0 -> {
+                supportFragmentManager.popBackStack()
+                val entry = if (supportFragmentManager.backStackEntryCount > 1)
+                    supportFragmentManager.getBackStackEntryAt(supportFragmentManager.backStackEntryCount - 2)
+                else null
+                supportActionBar?.title = entry?.name ?: "Файловый менеджер"
+            }
+            else -> super.onBackPressed()
         }
     }
 }

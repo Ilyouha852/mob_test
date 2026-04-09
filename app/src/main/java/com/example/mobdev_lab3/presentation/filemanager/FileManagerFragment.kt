@@ -9,16 +9,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.example.mobdev_lab3.FileDetailActivity
-import com.example.mobdev_lab3.FileManagementActivity
 import com.example.mobdev_lab3.R
 import com.example.mobdev_lab3.model.FileItem
 import com.example.mobdev_lab3.model.SortMode
+import com.example.mobdev_lab3.presentation.filedetail.FileDetailFragment
 import com.example.mobdev_lab3.presentation.settings.SettingsViewModel
 import com.example.mobdev_lab3.viewmodel.FileManagerViewModel
 
@@ -73,6 +73,11 @@ class FileManagerFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadFiles()
+    }
+
     private fun setupUI() {
         radioByName.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) viewModel.setSortMode(SortMode.BY_NAME)
@@ -88,9 +93,10 @@ class FileManagerFragment : Fragment() {
         buttonHome.setOnClickListener { viewModel.goToHomeDirectory() }
 
         buttonFileManagement.setOnClickListener {
-            val intent = Intent(requireContext(), FileManagementActivity::class.java)
-            intent.putExtra(FileManagementActivity.EXTRA_CURRENT_PATH, viewModel.getCurrentPath())
-            startActivityForResult(intent, 1003)
+            navigateToFragment(
+                FileManagementFragment.newInstance(viewModel.getCurrentPath()),
+                "Управление файлами"
+            )
         }
 
         listViewFiles.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
@@ -146,9 +152,19 @@ class FileManagerFragment : Fragment() {
     }
 
     private fun openFileDetail(file: FileItem) {
-        val intent = Intent(requireContext(), FileDetailActivity::class.java)
-        intent.putExtra(FileDetailActivity.EXTRA_FILE_PATH, file.path)
-        startActivityForResult(intent, PERMISSION_REQUEST_CODE)
+        navigateToFragment(
+            FileDetailFragment.newInstance(file.path),
+            "Подробности файла"
+        )
+    }
+
+    private fun navigateToFragment(fragment: Fragment, title: String) {
+        (requireActivity() as AppCompatActivity).supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)
+            .commit()
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = title
     }
 
     private fun checkPermissions(): Boolean {
@@ -188,7 +204,6 @@ class FileManagerFragment : Fragment() {
         if (requestCode == PERMISSION_REQUEST_CODE && checkPermissions()) {
             viewModel.loadFiles()
         }
-        if (requestCode == 1003) viewModel.loadFiles()
     }
 
     override fun onRequestPermissionsResult(

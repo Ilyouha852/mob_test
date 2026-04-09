@@ -6,36 +6,21 @@
     android:padding="16dp"
     android:background="@android:color/white">
 
-    <!-- Заголовок -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Управление файлами"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Текущий путь -->
     <TextView
         android:id="@+id/textViewCurrentPath"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Текущая папка: "
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:background="@color/lightgray"
         android:padding="12dp"
-        android:layout_marginBottom="16dp" />
+        android:layout_marginBottom="12dp" />
 
-    <!-- Кнопки навигации -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="12dp">
 
         <Button
             android:id="@+id/buttonHome"
@@ -43,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Домой"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="4dp" />
 
         <Button
             android:id="@+id/buttonUp"
@@ -60,16 +45,14 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Назад"
-            android:layout_marginStart="8dp" />
-
+            android:layout_marginStart="4dp" />
     </LinearLayout>
 
-    <!-- Кнопки создания -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="12dp">
 
         <Button
             android:id="@+id/buttonCreateFile"
@@ -88,15 +71,13 @@
             android:text="Создать папку"
             android:layout_marginStart="8dp"
             android:backgroundTint="@android:color/holo_blue_light" />
-
     </LinearLayout>
 
-    <!-- Список файлов -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Файлы и папки:"
-        android:textSize="16sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:layout_marginBottom="8dp" />
 

@@ -6,27 +6,13 @@
     android:padding="16dp"
     android:background="@android:color/white">
 
-    <!-- Заголовок -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Подробности файла"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="@android:color/darker_gray"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Информация о файле -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@color/lightgray"
         android:padding="16dp"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="12dp">
 
         <TextView
             android:id="@+id/textViewFileName"
@@ -35,49 +21,47 @@
             android:text="Имя: "
             android:textSize="16sp"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:id="@+id/textViewFilePath"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Путь: "
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp" />
+            android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:id="@+id/textViewFileSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Размер: "
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp" />
+            android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:id="@+id/textViewFileType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Тип: "
-            android:textSize="14sp"
-            android:layout_marginBottom="8dp" />
+            android:textSize="13sp"
+            android:layout_marginBottom="6dp" />
 
         <TextView
             android:id="@+id/textViewFileDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Дата изменения: "
-            android:textSize="14sp" />
-
+            android:textSize="13sp" />
     </LinearLayout>
 
-    <!-- Содержимое файла -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Содержимое:"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_marginBottom="8dp" />
+        android:layout_marginBottom="6dp" />
 
     <ScrollView
         android:id="@+id/scrollViewContent"
@@ -92,26 +76,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Загрузка содержимого..."
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:padding="12dp"
             android:fontFamily="monospace"
             android:lineSpacingExtra="4dp" />
-
     </ScrollView>
 
-    <!-- Кнопки управления -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="12dp">
 
         <Button
             android:id="@+id/buttonAddToBookmarks"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Добавить в закладки"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="6dp" />
 
         <Button
             android:id="@+id/buttonAddToDatabase"
@@ -120,14 +102,15 @@
             android:text="Add to Database"
             android:backgroundTint="#4CAF50"
             android:textColor="#FFFFFF"
-            android:layout_marginBottom="8dp" />
+            android:layout_marginBottom="6dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginTop="4dp">
 
         <Button
             android:id="@+id/buttonBack"
@@ -135,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Назад"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="4dp" />
 
         <Button
             android:id="@+id/buttonOpen"
@@ -161,9 +144,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Удалить"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:backgroundTint="@android:color/holo_red_light" />
-
     </LinearLayout>
 
 </LinearLayout>
