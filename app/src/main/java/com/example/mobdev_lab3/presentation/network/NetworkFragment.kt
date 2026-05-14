@@ -8,9 +8,9 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.network.NetworkClient
-import com.example.mobdev_lab3.network.model.Post
-import com.example.mobdev_lab3.network.model.User
+import com.example.mobdev_lab3.data.network.NetworkClient
+import com.example.mobdev_lab3.data.network.model.Post
+import com.example.mobdev_lab3.data.network.model.User
 
 class NetworkFragment : Fragment() {
 

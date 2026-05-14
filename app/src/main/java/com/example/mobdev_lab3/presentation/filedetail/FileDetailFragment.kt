@@ -12,12 +12,11 @@ import android.widget.EditText
 import android.widget.ScrollView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.helper.BookmarksDialogHelper
-import com.example.mobdev_lab3.model.FileItem
+import com.example.mobdev_lab3.presentation.bookmarks.BookmarksDialogHelper
+import com.example.mobdev_lab3.domain.model.FileItem
 import com.example.mobdev_lab3.data.repository.FileOperationsRepositoryImpl
 
 class FileDetailFragment : Fragment() {

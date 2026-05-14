@@ -1,5 +1,6 @@
 package com.example.mobdev_lab3.presentation.filemetadata
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,12 +16,16 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.adapter.FileMetadataAdapter
-import com.example.mobdev_lab3.database.entity.Tag
-import com.example.mobdev_lab3.dialog.TagManagementDialog
-import com.example.mobdev_lab3.helper.BookmarksDialogHelper
-import com.example.mobdev_lab3.model.BookmarkColor
+import com.example.mobdev_lab3.presentation.adapter.FileMetadataAdapter
+import com.example.mobdev_lab3.data.database.entity.Tag
+import com.example.mobdev_lab3.presentation.dialog.TagManagementDialog
+import com.example.mobdev_lab3.presentation.bookmarks.BookmarksDialogHelper
+import com.example.mobdev_lab3.domain.model.BookmarkColor
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.io.File
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class FileMetadataFragment : Fragment() {
 
@@ -72,10 +77,10 @@ class FileMetadataFragment : Fragment() {
                 }
                 val tagsStr = if (fileTags.isNotEmpty()) fileTags.joinToString(", ") { it.name } else "Нет тегов"
                 val lastAccess = file.lastAccessDate?.let {
-                    java.text.SimpleDateFormat("dd.MM.yyyy HH:mm", java.util.Locale.getDefault())
-                        .format(java.util.Date(it))
+                    SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.getDefault())
+                        .format(Date(it))
                 } ?: "Неизвестно"
-                android.app.AlertDialog.Builder(requireContext())
+                AlertDialog.Builder(requireContext())
                     .setTitle("Метаданные файла")
                     .setMessage("Имя: ${file.fileName}\n\nПуть: ${file.filePath}\n\nПоследний доступ: $lastAccess\n\nИзбранное: ${if (file.isFavorite == true) "Да" else "Нет"}\n\nТеги: $tagsStr")
                     .setPositiveButton("OK", null)
@@ -88,7 +93,7 @@ class FileMetadataFragment : Fragment() {
                     }
                     BookmarksDialogHelper(requireContext()).showAddBookmarkDialog(
                         initialPath = fileToAdd.filePath,
-                        initialIsDir = java.io.File(fileToAdd.filePath).isDirectory,
+                        initialIsDir = File(fileToAdd.filePath).isDirectory,
                         initialName = fileToAdd.fileName,
                         initialColor = initialColor
                     ) {
@@ -108,7 +113,7 @@ class FileMetadataFragment : Fragment() {
                 }
             },
             onDeleteClick = { file ->
-                android.app.AlertDialog.Builder(requireContext())
+                AlertDialog.Builder(requireContext())
                     .setTitle("Удалить метаданные файла")
                     .setMessage("Вы уверены, что хотите удалить «${file.fileName}» из базы данных?")
                     .setPositiveButton("Удалить") { _, _ -> viewModel.deleteMetadata(file) }

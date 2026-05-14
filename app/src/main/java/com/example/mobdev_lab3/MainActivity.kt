@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.example.mobdev_lab3.database.DatabaseManager
+import com.example.mobdev_lab3.data.database.DatabaseManager
 import com.example.mobdev_lab3.presentation.about.AboutFragment
 import com.example.mobdev_lab3.presentation.bookmarks.BookmarksFragment
 import com.example.mobdev_lab3.presentation.concurrency.ConcurrencyFragment
@@ -18,7 +18,7 @@ import com.example.mobdev_lab3.presentation.filemetadata.FileMetadataFragment
 import com.example.mobdev_lab3.presentation.network.NetworkFragment
 import com.example.mobdev_lab3.presentation.settings.SettingsFragment
 import com.example.mobdev_lab3.presentation.storage.StorageFragment
-import com.example.mobdev_lab3.viewmodel.FileManagerViewModel
+import com.example.mobdev_lab3.presentation.viewmodel.FileManagerViewModel
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

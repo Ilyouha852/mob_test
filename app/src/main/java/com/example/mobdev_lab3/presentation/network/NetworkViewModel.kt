@@ -8,9 +8,9 @@ import androidx.lifecycle.viewModelScope
 import com.example.mobdev_lab3.data.repository.UserRepositoryImpl
 import com.example.mobdev_lab3.domain.usecase.GetUserPostsUseCase
 import com.example.mobdev_lab3.domain.usecase.GetUserUseCase
-import com.example.mobdev_lab3.network.NetworkResult
-import com.example.mobdev_lab3.network.model.Post
-import com.example.mobdev_lab3.network.model.User
+import com.example.mobdev_lab3.data.network.NetworkResult
+import com.example.mobdev_lab3.data.network.model.Post
+import com.example.mobdev_lab3.data.network.model.User
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 

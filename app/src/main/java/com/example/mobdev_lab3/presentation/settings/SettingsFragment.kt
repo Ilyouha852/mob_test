@@ -9,7 +9,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.model.SortMode
+import com.example.mobdev_lab3.domain.model.SortMode
 
 class SettingsFragment : Fragment() {
 

@@ -8,8 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.example.mobdev_lab3.data.repository.BookmarkRepositoryImpl
 import com.example.mobdev_lab3.data.repository.FileMetadataRepositoryImpl
 import com.example.mobdev_lab3.data.repository.TagRepositoryImpl
-import com.example.mobdev_lab3.database.entity.FileMetadata
-import com.example.mobdev_lab3.database.entity.Tag
+import com.example.mobdev_lab3.data.database.entity.FileMetadata
+import com.example.mobdev_lab3.data.database.entity.Tag
 import com.example.mobdev_lab3.domain.usecase.AssignTagsToFileUseCase
 import com.example.mobdev_lab3.domain.usecase.CreateTagUseCase
 import com.example.mobdev_lab3.domain.usecase.DeleteFileMetadataUseCase
@@ -17,7 +17,7 @@ import com.example.mobdev_lab3.domain.usecase.GetAllFileMetadataUseCase
 import com.example.mobdev_lab3.domain.usecase.GetAllTagsUseCase
 import com.example.mobdev_lab3.domain.usecase.GetTagsByFileUseCase
 import com.example.mobdev_lab3.domain.usecase.UpdateFileMetadataUseCase
-import com.example.mobdev_lab3.manager.BookmarksManager
+import com.example.mobdev_lab3.data.storage.BookmarksManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

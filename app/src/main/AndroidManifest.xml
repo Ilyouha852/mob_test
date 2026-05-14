@@ -10,15 +10,16 @@
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
 
-    <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="MOBDEV_LAB4"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MOBDEV_LAB3">
+ <application
+ android:name=".App"
+ android:allowBackup="true"
+ android:dataExtractionRules="@xml/data_extraction_rules"
+ android:fullBackupContent="@xml/backup_rules"
+ android:icon="@mipmap/ic_launcher"
+ android:label="MOBDEV_LAB4"
+ android:roundIcon="@mipmap/ic_launcher_round"
+ android:supportsRtl="true"
+ android:theme="@style/Theme.MOBDEV_LAB3">
 
         <activity
             android:name=".MainActivity"

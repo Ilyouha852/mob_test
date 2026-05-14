@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.core.content.edit
-import com.example.mobdev_lab3.model.SortMode
+import com.example.mobdev_lab3.domain.model.SortMode
 
 data class AppSettings(
     val sortMode: SortMode = SortMode.BY_NAME,

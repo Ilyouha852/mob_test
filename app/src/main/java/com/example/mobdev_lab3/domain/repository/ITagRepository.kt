@@ -1,6 +1,6 @@
 package com.example.mobdev_lab3.domain.repository
 
-import com.example.mobdev_lab3.database.entity.Tag
+import com.example.mobdev_lab3.data.database.entity.Tag
 
 interface ITagRepository {
     fun getAllTags(): List<Tag>

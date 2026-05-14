@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import com.example.mobdev_lab3.data.repository.BookmarkRepositoryImpl
 import com.example.mobdev_lab3.domain.usecase.GetBookmarksUseCase
 import com.example.mobdev_lab3.domain.usecase.SaveBookmarksUseCase
-import com.example.mobdev_lab3.model.FileBookmark
+import com.example.mobdev_lab3.domain.model.FileBookmark
 
 class BookmarksViewModel(application: Application) : AndroidViewModel(application) {
 

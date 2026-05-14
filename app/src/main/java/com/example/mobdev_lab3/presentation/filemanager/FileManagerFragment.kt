@@ -16,11 +16,11 @@ import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.model.FileItem
-import com.example.mobdev_lab3.model.SortMode
+import com.example.mobdev_lab3.domain.model.FileItem
+import com.example.mobdev_lab3.domain.model.SortMode
 import com.example.mobdev_lab3.presentation.filedetail.FileDetailFragment
 import com.example.mobdev_lab3.presentation.settings.SettingsViewModel
-import com.example.mobdev_lab3.viewmodel.FileManagerViewModel
+import com.example.mobdev_lab3.presentation.viewmodel.FileManagerViewModel
 
 @Suppress("DEPRECATION")
 class FileManagerFragment : Fragment() {

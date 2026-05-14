@@ -4,9 +4,10 @@ buildscript {
         google()
         mavenCentral()
     }
-    dependencies {
-        classpath("org.greenrobot:greendao-gradle-plugin:3.3.0")
-    }
+ dependencies {
+ classpath("org.greenrobot:greendao-gradle-plugin:3.3.0")
+ classpath("com.google.dagger:hilt-android-gradle-plugin:2.48")
+ }
 }
 
 plugins {

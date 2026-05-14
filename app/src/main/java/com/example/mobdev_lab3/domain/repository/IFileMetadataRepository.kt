@@ -1,6 +1,6 @@
 package com.example.mobdev_lab3.domain.repository
 
-import com.example.mobdev_lab3.database.entity.FileMetadata
+import com.example.mobdev_lab3.data.database.entity.FileMetadata
 
 interface IFileMetadataRepository {
     fun getMetadataByPath(path: String): FileMetadata?

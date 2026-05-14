@@ -1,12 +1,14 @@
 package com.example.mobdev_lab3.data.repository
 
-import com.example.mobdev_lab3.database.entity.Tag
-import com.example.mobdev_lab3.database.repository.TagRepository
+import com.example.mobdev_lab3.data.database.entity.Tag
+import com.example.mobdev_lab3.data.database.repository.TagRepository
 import com.example.mobdev_lab3.domain.repository.ITagRepository
 
-class TagRepositoryImpl : ITagRepository {
+import javax.inject.Inject
 
-    private val dao = TagRepository()
+class TagRepositoryImpl @Inject constructor() : ITagRepository {
+
+ private val dao = TagRepository()
 
     override fun getAllTags(): List<Tag> = dao.getAllTags()
 

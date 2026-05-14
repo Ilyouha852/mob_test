@@ -16,8 +16,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.example.mobdev_lab3.R
 import com.example.mobdev_lab3.ui.storage.CsvFileFragment
-import com.example.mobdev_lab3.ui.storage.SharedPreferencesFragment
-import com.example.mobdev_lab3.ui.storage.TxtFileFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 

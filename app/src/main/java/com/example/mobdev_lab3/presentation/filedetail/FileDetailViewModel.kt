@@ -8,17 +8,18 @@ import androidx.lifecycle.viewModelScope
 import com.example.mobdev_lab3.data.repository.BookmarkRepositoryImpl
 import com.example.mobdev_lab3.data.repository.FileMetadataRepositoryImpl
 import com.example.mobdev_lab3.data.repository.FileOperationsRepositoryImpl
-import com.example.mobdev_lab3.database.entity.FileMetadata
+import com.example.mobdev_lab3.data.database.entity.FileMetadata
 import com.example.mobdev_lab3.domain.usecase.DeleteFileUseCase
 import com.example.mobdev_lab3.domain.usecase.GetFileContentUseCase
 import com.example.mobdev_lab3.domain.usecase.GetFileMetadataByPathUseCase
 import com.example.mobdev_lab3.domain.usecase.RenameFileUseCase
 import com.example.mobdev_lab3.domain.usecase.SaveBookmarksUseCase
 import com.example.mobdev_lab3.domain.usecase.ToggleFileInDatabaseUseCase
-import com.example.mobdev_lab3.model.FileItem
+import com.example.mobdev_lab3.domain.model.FileItem
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.io.File
 
 data class FileDetailUiState(
     val file: FileItem? = null,
@@ -61,7 +62,7 @@ class FileDetailViewModel(application: Application) : AndroidViewModel(applicati
             _uiState.value = _uiState.value?.copy(isLoading = true, error = null)
             try {
                 val fileItem = withContext(Dispatchers.IO) {
-                    FileItem.fromFile(java.io.File(filePath))
+                    FileItem.fromFile(File(filePath))
                 }
                 val content = withContext(Dispatchers.IO) {
                     getContentUseCase(filePath, fileItem.isDirectory)
@@ -99,7 +100,7 @@ class FileDetailViewModel(application: Application) : AndroidViewModel(applicati
         viewModelScope.launch {
             val newPath = withContext(Dispatchers.IO) { renameFileUseCase(file.path, newName) }
             if (newPath != null) {
-                val newItem = withContext(Dispatchers.IO) { FileItem.fromFile(java.io.File(newPath)) }
+                val newItem = withContext(Dispatchers.IO) { FileItem.fromFile(File(newPath)) }
                 _uiState.value = _uiState.value?.copy(file = newItem)
                 _event.value = FileDetailEvent.Renamed(newPath, newItem)
             } else {

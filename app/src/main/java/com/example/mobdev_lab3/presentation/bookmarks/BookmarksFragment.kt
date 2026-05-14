@@ -1,7 +1,6 @@
 package com.example.mobdev_lab3.presentation.bookmarks
 
 import android.app.AlertDialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,10 +11,9 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobdev_lab3.R
-import com.example.mobdev_lab3.adapter.BookmarkAdapter
-import com.example.mobdev_lab3.helper.BookmarksDialogHelper
-import com.example.mobdev_lab3.model.BookmarkColor
-import com.example.mobdev_lab3.model.FileBookmark
+import com.example.mobdev_lab3.presentation.adapter.BookmarkAdapter
+import com.example.mobdev_lab3.domain.model.BookmarkColor
+import com.example.mobdev_lab3.domain.model.FileBookmark
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.textfield.TextInputEditText
 import java.io.File

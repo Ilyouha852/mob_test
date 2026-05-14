@@ -2,12 +2,18 @@ package com.example.mobdev_lab3.data.repository
 
 import android.content.Context
 import com.example.mobdev_lab3.domain.repository.IBookmarkRepository
-import com.example.mobdev_lab3.model.BookmarkColor
-import com.example.mobdev_lab3.model.FileBookmark
+import com.example.mobdev_lab3.domain.model.BookmarkColor
+import com.example.mobdev_lab3.domain.model.FileBookmark
+import dagger.hilt.android.qualifiers.ApplicationContext
 import org.json.JSONArray
 import org.json.JSONObject
+import javax.inject.Inject
 
-class BookmarkRepositoryImpl(private val context: Context) : IBookmarkRepository {
+import javax.inject.Inject
+
+class BookmarkRepositoryImpl @Inject constructor(
+ @ApplicationContext private val context: Context
+) : IBookmarkRepository {
 
     companion object {
         private const val PREFS_NAME = "bookmarks_prefs"

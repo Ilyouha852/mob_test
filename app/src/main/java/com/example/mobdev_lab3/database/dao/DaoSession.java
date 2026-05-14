@@ -8,9 +8,9 @@ import org.greenrobot.greendao.database.Database;
 import org.greenrobot.greendao.identityscope.IdentityScopeType;
 import org.greenrobot.greendao.internal.DaoConfig;
 
-import com.example.mobdev_lab3.database.entity.FileMetadata;
-import com.example.mobdev_lab3.database.entity.FileMetadataTag;
-import com.example.mobdev_lab3.database.entity.Tag;
+import com.example.mobdev_lab3.data.database.entity.FileMetadata;
+import com.example.mobdev_lab3.data.database.entity.FileMetadataTag;
+import com.example.mobdev_lab3.data.database.entity.Tag;
 
 import com.example.mobdev_lab3.database.dao.FileMetadataDao;
 import com.example.mobdev_lab3.database.dao.FileMetadataTagDao;

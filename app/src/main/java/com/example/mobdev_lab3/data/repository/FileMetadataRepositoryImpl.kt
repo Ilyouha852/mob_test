@@ -1,7 +1,7 @@
 package com.example.mobdev_lab3.data.repository
 
-import com.example.mobdev_lab3.database.entity.FileMetadata
-import com.example.mobdev_lab3.database.repository.FileMetadataRepository
+import com.example.mobdev_lab3.data.database.entity.FileMetadata
+import com.example.mobdev_lab3.data.database.repository.FileMetadataRepository
 import com.example.mobdev_lab3.domain.repository.IFileMetadataRepository
 
 class FileMetadataRepositoryImpl : IFileMetadataRepository {

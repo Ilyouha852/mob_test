@@ -1,7 +1,9 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-    id("org.greenrobot.greendao")
+ alias(libs.plugins.android.application)
+ alias(libs.plugins.kotlin.android)
+ id("org.greenrobot.greendao")
+ id("com.google.dagger.hilt.android")
+ id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -87,9 +89,13 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+ testImplementation(libs.junit)
+ androidTestImplementation(libs.androidx.junit)
+ androidTestImplementation(libs.androidx.espresso.core)
+
+ // Hilt
+ implementation("com.google.dagger:hilt-android:2.48")
+ kapt("com.google.dagger:hilt-android-compiler:2.48")
 }
 
 // Fix for Gradle 7+ and greenDAO: explicit dependency
